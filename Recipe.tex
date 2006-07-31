@@ -1,0 +1,52 @@
+\documentclass{book}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{multicol}
+\usepackage{makeidx}
+
+\makeindex
+
+\input{Commands}
+
+\begin{document}
+
+\title{Laboratory Procedures for Basic Applied Biochemistry \\
+\includegraphics[width=10cm]{CoverLogo} 
+}
+\author{ Andre Masella }
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+\chapter{ Introduction }
+
+\section { Welcome }
+
+These are recipes I have collected from various places. Most of them are
+family recipies. Some recpies are marked \UNTESTED meaning I have not
+made them, but they seem sound.  I will test them eventually.\par
+
+\section { Preparation }
+
+This has been typeset using \LaTeX{}, using custom recipe environments.
+The cover graphic was made in Kontour.\par
+
+\section { Conversion Hints }
+
+Baking is mostly imperial, but I am a very metric person. Since a cup is
+125\,mL which is realtively ``round'' number, I can live with the
+inconsitancies, but it is good to know that: \par
+
+\begin{tabular}{c c c c c}
+3 tsp & = & 1 tbsp & = & \half oz \\
+1 cup & = & 8 oz & = & \quarter qt 
+\end{tabular}
+
+\input{index}
+
+\printindex
+
+\end{document}

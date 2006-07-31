@@ -1,0 +1,14 @@
+#!/bin/sh
+DIR="`basename $(pwd)`"
+
+if [ -f name ]
+then
+	echo '\chapter{'`cat name`'}' > index.tex
+else
+	echo '\chapter{'$DIR'}' > index.tex
+fi
+
+for FILE in "$@"
+do
+	echo '\input{'$DIR/$FILE'}' >> index.tex
+done

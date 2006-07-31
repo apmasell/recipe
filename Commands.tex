@@ -1,0 +1,61 @@
+\newcommand{\half}{$\frac{1}{2}$}
+\newcommand{\quarter}{$\frac{1}{4}$}
+\newcommand{\threequarter}{$\frac{3}{4}$}
+\newcommand{\eighth}{$\frac{1}{8}$}
+\newcommand{\third}{$\frac{1}{3}$}
+\newcommand{\twothird}{$\frac{2}{3}$}
+\newcommand{\Tp}[1]{#1\,tbsp}
+\newcommand{\tp}[1]{#1\,tsp}
+\newcommand{\C}[1]{#1\,cup}
+\newcommand{\oz}[1]{#1\,oz}
+\newcommand{\cm}[1]{#1\,cm}
+\newcommand{\inch}[1]{#1$^{\prime\prime}$}
+\newcommand{\lbs}[1]{#1\,lbs}
+\newcommand{\qt}[1]{#1\,qt}
+\newcommand{\gr}[1]{#1\,g}
+\newcommand{\kgr}[1]{#1\,kg}
+\newcommand{\gal}[1]{#1\,gallon}
+\newcommand{\tF}[1]{#1\,\textdegree F}
+\newcommand{\tC}[1]{#1\,\textdegree C}
+\newcommand{\ang}[1]{#1\,\textdegree}
+\newcommand{\UNTESTED}{ $\bullet$ }
+
+\newenvironment{ingredients}
+{\noindent\textit{Ingredients:}\renewcommand{\item}{\par\noindent}}{\par}
+
+\newenvironment{directions}
+{\smallskip\begin{enumerate}\setlength{\itemsep}{-1pt}}{\end{enumerate}}
+
+\catcode`\@=11
+%    \@car is actually already defined in latex.tex, but for
+%    maximum robustness it needs to have the \long prefix:
+\long\def\@car#1#2\@nil{#1}
+\long\def\@first#1#2{#1}
+\long\def\@second#1#2{#2}
+\long\def\ifempty#1{\expandafter\ifx\@car#1@\@nil @\@empty
+  \expandafter\@first\else\expandafter\@second\fi}
+  \catcode`\@=12
+  
+  \long\def\test#1{\begingroup \toks0{[#1]}%
+    \newlinechar`\/\message{/\the\toks0:
+      \ifempty{#1}{EMPTY}{NOT empty}%
+      }\endgroup}
+      
+\newcommand{\nonempty}[2]{\ifempty{#1}{}{#2}}
+
+\newenvironment{recipe}[3]{
+
+\newcommand{\theme}[1]{\index{##1!#1}##1}
+
+\section{#1}
+\nonempty{#2#3}{
+\noindent
+	\nonempty{#2}{From #2.}
+\hfil 
+	\nonempty{#3}{Makes #3.}
+\par}
+\begin{multicols}{2}
+}{\end{multicols}}
+
+\newcommand{\hint}[1]{\smallskip \noindent \textsl{#1} \par}
+\newcommand{\subrecipe}[1]{\subsection*{#1}}

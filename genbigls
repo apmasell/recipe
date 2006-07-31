@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo > index.tex
+
+for FILE in "$@"
+do
+	echo '\input{'$FILE'index}' >> index.tex
+done

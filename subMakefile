@@ -1,0 +1,9 @@
+TEXFILES=$(wildcard *.tex)
+
+index.tex: ${TEXFILES}
+	${genls} $^
+
+clean:
+	rm -f index
+
+.PHONY: clean
