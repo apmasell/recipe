@@ -10,11 +10,20 @@ dirs:
 index.tex: ${TEXDIRS}
 	${genbigls} $^
 
-Recipe.pdf: dirs index.tex
+Recipe.pdf: dirs index.tex CoverLogo.pdf
 	pdflatex Recipe && makeindex Recipe && pdflatex Recipe
 
 Revision.tex:
 	svn info | grep Revision > $@
+
+%.ps: %.svg
+	inkscape -P $@ $<
+
+%.eps: %.ps
+	ps2epsi $< $@
+
+%.pdf: %.eps
+	epstopdf $< -o=$@
 
 rmtemp:
 	rm -f Recipe.log Recipe.dvi Recipe.ps missfont.log Recipe.toc Recipe.out
@@ -24,3 +33,4 @@ clean: rmtemp
 	rm -f Recipe.aux Recipe.idx Recipe.ilg Recipe.ind Recipe.pdf index.tex Revision.tex
 
 .PHONY: all clean rmtemp dirs
+
