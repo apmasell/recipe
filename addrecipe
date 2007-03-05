@@ -1,17 +1,26 @@
 #!/bin/sh
 
 FILE=`mktemp -t addrecipe-XXXXXX`
+DIALOG=`mktemp -t addrecipe-XXXXXX`
 trap "rm -f $FILE" 0 15
 
 HEIGHT=$(($(stty size | cut -f 1 -d " ")-2))
 WIDTH=$(($(stty size | cut -f 2 -d " ")-4))
 
+echo -n dialog --menu \"Select a category:\" $HEIGHT $WIDTH $(($HEIGHT-5)) \ > $DIALOG
 for each in $(ls -d */)
 do
-	CATLIST="$CATLIST $each $each"
+	echo -n $each \ >> $DIALOG
+	if [ -f ${each}name ]
+	then
+		echo -n \"$(cat ${each}name | tr -d \'\" )\" \ >> $DIALOG
+	else
+		echo -n $each \  | tr -d / >> $DIALOG
+	fi
 done
 
-dialog --menu "Select a category:" $HEIGHT $WIDTH $(($HEIGHT-5)) $CATLIST 2>$FILE
+echo 2\>$FILE >> $DIALOG
+. $DIALOG
 [ $? == 0 ] || exit 1
 CAT="`cat $FILE`"
 
