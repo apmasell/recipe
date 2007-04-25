@@ -13,7 +13,7 @@ index.tex: ${TEXDIRS}
 Recipe.pdf: dirs index.tex CoverLogo.pdf
 	pdflatex Recipe && makeindex Recipe && pdflatex Recipe
 
-Revision.tex:
+Revision.tex: always
 	svn info | grep Revision > $@
 
 %.ps: %.svg
@@ -32,5 +32,5 @@ clean: rmtemp
 	for dir in ${TEXDIRS}; do $(MAKE) -C $$dir clean; done
 	rm -f Recipe.aux Recipe.idx Recipe.ilg Recipe.ind Recipe.pdf index.tex Revision.tex
 
-.PHONY: all clean rmtemp dirs
+.PHONY: all clean rmtemp dirs always
 
