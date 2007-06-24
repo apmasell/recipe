@@ -45,5 +45,6 @@ rm -f $FILE
 
 [ "x$EDITOR" == x ] && EDITOR=vi
 svn add $FILENAME
+
 exec $EDITOR $FILENAME
 
