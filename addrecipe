@@ -37,7 +37,7 @@ dialog --inputbox "Number of servings:" $HEIGHT $WIDTH 2>$FILE
 [ $? == 0 ] || exit 1
 SIZE="`cat $FILE`"
 
-FILENAME="$CAT$(echo $TITLE | tr A-Z a-z | sed -e 's/^\([a-z]\)/\U\1/g; s/\([^a-z0-9]\)\([a-z]\)/\1\U\2/g' | tr -d " " ).tex"
+FILENAME="$CAT$(echo $TITLE | tr A-Z a-z | sed -e 's/^\([a-z]\)/\U\1/g; s/\([^A-Za-z0-9]\)\([a-z]\)/\1\U\2/g' | tr -d " " ).tex"
 
 sed -e 's/name/'"$TITLE"'/g;s/author/'"$AUTHOR"'/g;s/servings/'"$SIZE"'/g' Template.tex > ${FILENAME}
 
