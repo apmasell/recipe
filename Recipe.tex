@@ -1,16 +1,29 @@
 \documentclass{book}
+\usepackage{fancyhdr}
 \usepackage{textcomp}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{ifthen}
 \usepackage{multicol}
 \usepackage{makeidx}
+\usepackage[sf,medium,compact]{titlesec}
 
 \makeindex
 
 \input{Commands}
 
 \begin{document}
+\titlelabel{}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+ 
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
+\fancyhead[LO]{}
+
+\thispagestyle{plain}
 
 \title{Laboratory Procedures for Basic Applied Biochemistry \\
 \includegraphics[width=0.5\textwidth,angle=-90]{CoverLogo} 
@@ -21,20 +34,20 @@
 
 \tableofcontents
 
-\chapter{ Introduction }
+\chapter{Introduction}
 
-\section { Welcome }
+\section{Welcome}
 
 These are recipes I have collected from various places. Most of them are
 family recipies. Some recpies are marked \UNTESTED meaning I have not
 made them, but they seem sound.  I will test them eventually. Some recipes are marked with \FIXME{}. These are undoubtedly family recipes lacking quantities. If you make one of these, please accurately measure the ingredients and help me update this book.\par
 
-\section { Preparation }
+\section{Preparation}
 
 This has been typeset using \LaTeX{}, using custom recipe environments.
 The cover graphic was made in Inkscape.\par
 
-\section { Conversion Hints }
+\section{Conversion Hints}
 
 It is good to know that: \par
 
