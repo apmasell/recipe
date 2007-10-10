@@ -49,7 +49,8 @@
 \newenvironment{recipe}[3]{
 
 \newcommand{\theme}[1]{\index{##1!#1}##1}
-\section{#1}
+\newcommand{\seerecipe}[1]{~(See page~\pageref{rcp:##1})\ }
+\section{#1}\label{\ThisFile}
 \nonempty{#2#3}{
 \noindent
 	\nonempty{#2}{From #2.}

@@ -11,6 +11,6 @@ fi
 echo '\begin{multicols}{2}' >> index.tex
 for FILE in "$@"
 do
-	echo '\input{'$DIR/$FILE'}' >> index.tex
+	echo '\def\ThisFile{'rcp:$DIR:$(basename $FILE .tex)'}\input{'$DIR/$FILE'}' >> index.tex
 done
 echo '\end{multicols}' >> index.tex
