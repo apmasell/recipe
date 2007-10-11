@@ -15,7 +15,7 @@ Recipe.pdf: dirs index.tex CoverLogo.pdf
 
 Revision.tex: always
 	svn info | grep Revision > $@
-	[ `svn st | wc -l` -gt 0 ] && echo Dirty >> $@
+	[ `svn st | wc -l` -gt 0 ] && echo Dirty || exit 0 >> $@
 
 %.ps: %.svg
 	inkscape -P $@ $<
