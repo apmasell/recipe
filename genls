@@ -8,7 +8,7 @@ else
 	echo '\chapter{'$DIR'}' > index.tex
 fi
 
-echo '\begin{multicols}{2}' >> index.tex
+echo '\begin{multicols}{2}\raggedcolumns' >> index.tex
 for FILE in "$@"
 do
 	echo '\def\ThisFile{'rcp:$DIR:$(basename $FILE .tex)'}\input{'$DIR/$FILE'}' >> index.tex
