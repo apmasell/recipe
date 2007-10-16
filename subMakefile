@@ -1,7 +1,7 @@
 TEXFILES=$(wildcard *.tex)
 
 index.tex: ${TEXFILES}
-	${genls} $^
+	${genls}
 
 clean:
 	rm -f index
