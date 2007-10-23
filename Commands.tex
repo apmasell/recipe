@@ -17,11 +17,12 @@
 \newcommand{\gal}[1]{#1\,gallon}
 \newcommand{\ltr}[1]{#1\,L}
 \newcommand{\mL}[1]{#1\,mL}
-\newcommand{\tF}[1]{#1\,\textdegree F}
-\newcommand{\tC}[1]{#1\,\textdegree C}
+\newcommand{\tF}[1]{#1\,\textdegree{}F}
+\newcommand{\tC}[1]{#1\,\textcelsius}
 \newcommand{\ang}[1]{#1\,\textdegree}
-\newcommand{\UNTESTED}{ $\bullet$ }
-\newcommand{\FIXME}{ $\star$ }
+\newcommand{\UNTESTED}{\textbullet{}}
+\newcommand{\FIXME}{\textdaggerdbl{}}
+\newcommand{\seerecipe}[1]{~(See page~\pageref{rcp:#1})\ }
 
 \newenvironment{ingredients}
 {\noindent Ingredients:\begin{itemize*}\setlength{\itemindent}{-1.2pc}\renewcommand{\labelitemi}{$\cdot$}}{\end{itemize*}}
@@ -49,7 +50,6 @@
 \newenvironment{recipe}[3]{
 
 \newcommand{\theme}[1]{\index{##1!#1}##1}
-\newcommand{\seerecipe}[1]{~(See page~\pageref{rcp:##1})\ }
 \section{#1}\label{\ThisFile}
 \nonempty{#2#3}{
 \noindent

@@ -1,7 +1,7 @@
 \documentclass{book}
 \usepackage{fancyhdr}
 \usepackage{textcomp}
-\usepackage{hyperref}
+\usepackage[pdftitle={Laboratory Procedures for Basic Applied Biochemistry},pdfauthor={Andre Masella}]{hyperref}
 \usepackage{graphicx}
 \usepackage{ifthen}
 \usepackage{multicol}
@@ -29,8 +29,6 @@
 \widowpenalty=0
 \clubpenalty=0
 
-%\setlength{\parskip}{0pt plus 6pt} % default is 0plus1pt, need more 
-
 \title{Laboratory Procedures for Basic Applied Biochemistry \\
 \includegraphics[width=0.5\textwidth,angle=-90]{CoverLogo} 
 }
@@ -44,37 +42,51 @@
 
 \section{Welcome}
 
-These are recipes I have collected from various places. Most of them are
-family recipies. Some recpies are marked \UNTESTED meaning I have not
-made them, but they seem sound.  I will test them eventually. Some recipes are marked with \FIXME{}. These are undoubtedly family recipes lacking quantities. If you make one of these, please accurately measure the ingredients and help me update this book.\par
+This book started because most of our family recipes were not written down. Those that were, often had misleading or blatantly incorrect instructions. Those that were correct, were still cryptic asking for ``enough flour to make dough the right consistency''. A particularly good example are the Breakfast Cookies\seerecipe{Cookies:BreakfastCookies} which required ``2~heaping teaspoons'' of baking powder. First, these were not standard teaspoons, but kitchen serving tablespoons. The heap is supposed to be so large that it almost cannot be removed from the container. After some precise measurements with a scale, I found that these ``teaspoons'' were 3~times larger than a standard teaspoon.
+
+I hope to slowly standardize the recipes and make the quantities sound. It is best to assume all quantities, if even present, are subject to judgement and revision. If you make a discovery about a quantity, please tell me so that I can change this book.
+
+Some recipes are marked \UNTESTED{} meaning I have not made them, but they seem sound even though they came from the Internet. Some recipes are marked with \FIXME{}. These are undoubtedly family recipes lacking quantities, having incorrect quantities, or having missing information. If you make one of these, please accurately measure the ingredients and help me update this book.
+
 
 \section{Preparation}
 
-This has been typeset using \LaTeX{}, using custom recipe environments.
-The cover graphic was made in Inkscape.\par
+This has been typeset using \href{http://www.ctan.org}{\LaTeX}, using custom recipe environments. The cover graphic was made in \href{http://www.inkscape.org}{Inkscape}. Revision control is done through \href{http://subversion.tigris.org/}{Subversion}.\par
 
 \section{Conversion Hints}
 
 It is good to know that: \par
 
-\begin{tabular}{c c c c c}
-\tp{3} & = & \Tp{1} & = & \oz{\half} \\
-\C{1} & = & \oz{8} & = & \qt{\quarter}
+\begin{tabular}{c c c c c c c }
+\tp{3} & = & \Tp{1} & = & \oz{\half} & = & \C{$\frac{1}{16}$} \\
+\C{1} & = & \oz{8} & = & \qt{\quarter} & = & \mL{250}
 \end{tabular}
 
-\section{Trivia and Myths}
+In this book, no distinction is made between fluid ounces and avoirdupois ounces~(mass) in writing. I hope to eventually replace all ounces with either grams or cups.
+
+\section{Generic Tips}
 \begin{itemize}
 \item Water in a stainless steel pot should be salted after boiling as the salt will corrode and pit the metal.
+\item Before making a substitution, consult The Cook's Thesaurus~(\url{http://www.foodsubs.com/}).
+\end{itemize}
+
+\noindent Pasta Specific Tips:
+\begin{itemize}
 \item When removing meat from pasta sauce, a small well of pasta water should be added to ``rinse'' the meat as it is being removed.
-\item When dressing pasta the Nonna-way, toss the pasta is half the cheese and tomato sauce, put into individual dishes, sprinkle remaining cheese and ladle reamaining sauce on top. Adding sauce with cheese on top is ``ristorante''-style.
-\item If substituting canned tomatoes, diced tomates are equivalent to tomato pieces is most recipes and crushed tomatoes are equivalent to pur\'ee.
-\item To raise bread faster, put the bread in a cold oven with a bowl or pot of boiled water. Reheat the water when it cools.
-\item To make a firmer crust on breads, increase the oven temperature and steam the oven by cracking the door and wetting the sides of the oven with a spray bottle of water.
+\item When dressing pasta Nonna-style, toss the pasta is half the cheese and tomato sauce, put into individual dishes, sprinkle remaining cheese and ladle remaining sauce on top. Adding sauce with cheese on top is ``ristorante''-style.
+\item If substituting canned tomatoes, diced tomatoes are equivalent to tomato pieces is most recipes and crushed tomatoes are equivalent to pur\'ee.
 \item Rice can be substituted for pasta in many dishes by boiling the Arborio rice in a large volume of salted water.
 \end{itemize}
 
-\section{Bread Cooking}
-According to Alton Brown, bread should be cooked until it reaches an internal termperature of \tF{207}. Any higher than \tF{210} or lower than \tF{205} will result in bad bread. Times are suggestions based on experience before cooking by temperature or for recipes where inserting a temperature probe is not practical. Any recipes where bread is not cooked to \tF{207} are explicitly labelled.
+\noindent Bread Specific Tips:
+\begin{itemize}
+\item To raise bread faster, put the bread in a cold oven with a bowl or pot of boiled water. Reheat the water when it cools.
+\item To make a firmer crust on breads, increase the oven temperature and steam the oven by cracking the door and wetting the sides of the oven with a spray bottle of water.
+\item Starter, whisked down, has a density of $\frac{300\,\mathrm{g}}{1\,\mathrm{C}}$.
+\item According to Alton Brown, bread should be cooked until it reaches an internal temperature of \tF{207}. Any higher than \tF{210} and the water inside the bread will boil causing the bread to boil. Lower than \tF{205} will result in under cooked yeasty-flavoured bread. Times are suggestions based on experience before cooking by temperature or for recipes where inserting a temperature probe is not practical. Any recipes where bread is not cooked to \tF{207} are explicitly labelled. If a bread has reached \tF{207} but the crust is not dark enough, decrease oven temperature by \tF{50} and watch that the internal temperature does not exceed \tF{210}.
+\item Instead of using egg or milk glazes, a cornstarch glaze will give loaves a shiny dark crust.
+\item Starter should be grown in glass, plastic, or stainless steel vessels.
+\end{itemize}
 
 \def\ThisFile{rcp:ToastingNuts}\input{ToastingNuts}
 
@@ -82,11 +94,11 @@ According to Alton Brown, bread should be cooked until it reaches an internal te
 
 \chapter{Glossary}
 \begin{description}
-\item[baccal\`a] --- Dried salted cod.
-\item[culis\"e] --- The cooking water from pasta.
-\item[p\"epparul\"e] --- Sweet red pepper flakes. Subsitute paprika.
-\item[squicala] --- The arbirary amount of oil needed by recipes that do not specify a quantity of oil. Approximately 1-\Tp{3}.
-\item[window-pane test] --- A test to see if bread is sufficiently kneaded. Strech a small section of bread gently. If the bread can be stretched thin enough for light to pass through with out tearing, the dough is ready.
+\item[baccal\`a] (bahk-kah-LAH) --- Dried salted cod.
+\item[culis\"e] (chu-LISH) --- The cooking water from pasta.
+\item[p\"epparul\"e] (peh-pa-ROOL) --- Sweet red pepper flakes. Substitute paprika.
+\item[squicala] (skwi-CHAH-lah) --- The arbitrary amount of oil needed by recipes that do not specify a quantity of oil. Approximately 1 to \Tp{3}.
+\item[window-pane test] --- A test to see if bread is sufficiently kneaded. Stretch a small section of bread gently. If the bread can be stretched thin enough for light to pass through with out tearing, the dough is ready.
 \end{description}
 
 \printindex

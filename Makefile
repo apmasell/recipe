@@ -27,7 +27,7 @@ Revision.tex: always
 	epstopdf $< -o=$@
 
 rmtemp:
-	rm -f Recipe.log Recipe.dvi Recipe.ps missfont.log Recipe.toc Recipe.out
+	rm -f Recipe.log Recipe.dvi Recipe.ps missfont.log Recipe.out
 
 clean: rmtemp
 	for dir in ${TEXDIRS}; do $(MAKE) -C $$dir clean; done
