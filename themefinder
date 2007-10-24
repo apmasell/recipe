@@ -1,0 +1,16 @@
+#!/bin/sh
+
+./filteringredients */*.tex > ingredientlist
+for each in $(./indexedingredients | tr " " + )
+do
+	echo Checking $each...
+	FILES="$(grep -w "$(echo $each | tr + " ")" ingredientlist | grep -v theme | cut -f 1 -d : | sort | uniq)"
+	if [ "x$FILES" != "x" ]
+	then
+		echo Need to edit $FILES
+		read SKIP
+		[ "x$SKIP" = x ] && vim $FILES
+	fi
+done
+
+rm -f ingredientlist

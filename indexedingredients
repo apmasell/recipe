@@ -1,0 +1,2 @@
+#!/bin/sh
+cat Recipe.idx | cut -f 1 -d '!' | cut -f 2 -d '{' | sort | uniq
