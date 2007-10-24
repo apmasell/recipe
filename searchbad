@@ -2,7 +2,7 @@
 
 for each in */*.tex
 do
-	for expr in '([0-9]|\\(|two|three)(third|quarter|eighth)) (minute|hour|second|day|week)' '[0-9](| |\\,|~)(cm|oz|lbs)' '[0-9]+ \\(|two|three)(third|quarter|eighth)' '\\(|two|three)(third|quarter|eighth) +[^\\]' '\\textdegree' 'cup' '[Tt]b?sp' '(tea|table)spoon' '[pP]re-heat' '[lL]iquor' 'icing sugar' 'long grained' lengthwise 'length wise' 
+	for expr in '([0-9]|\\(|two|three)(third|quarter|eighth)) (minute|hour|second|day|week)' '[0-9](| |\\,|~)(cm|oz|lbs)' '[0-9]+ \\(|two|three)(third|quarter|eighth)' '\\(|two|three)(third|quarter|eighth) +[^\\]' '\\textdegree' 'cup' '[Tt]b?sp' '(tea|table)spoon' '[pP]re-heat' '[lL]iquor' 'icing sugar' 'long grained' lengthwise 'length wise' semisweet
 	do
 		lines="`egrep -n "$expr" $each | cut -f 1 -d : | tr '\n' ' '`"
 		[ ! -z "$lines" ] && echo $each fails $expr on $lines
