@@ -1,6 +1,13 @@
 #!/bin/sh
 
-for each in */*.tex
+if [ -d "$1" ]
+then
+	WHAT=$1/*.tex
+else
+	WHAT=*/*.tex
+fi
+
+for each in $WHAT
 do
 	for expr in '([0-9]|\\(|two|three)(third|quarter|eighth)) (minute|hour|second|day|week)' '[0-9](| |\\,|~)(cm|oz|lbs)' '[0-9]+ \\(|two|three)(third|quarter|eighth)' '\\(|two|three)(third|quarter|eighth) +[^\\]' '\\textdegree' 'cup' '[Tt]b?sp' '(tea|table)spoon' '[pP]re-heat' '[lL]iquor' 'icing sugar' 'long grained' lengthwise 'length wise' semisweet 'vanilla extract' 'about' 'butter milk' 'un.?greased' '[aA]pprox[^i]'
 	do
