@@ -14,7 +14,7 @@ Recipe.pdf: dirs index.tex CoverLogo.pdf
 	pdflatex Recipe && makeindex Recipe && pdflatex Recipe
 
 Revision.tex: always
-	svn info | grep Revision > $@
+	svn info https://masella.no-ip.org/svn/recipes | grep Revision > $@
 	[ `svn st | wc -l` -gt 0 ] && echo Dirty || exit 0 >> $@
 
 %.ps: %.svg
