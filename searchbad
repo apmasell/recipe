@@ -1,6 +1,9 @@
 #!/bin/sh
 
-if [ -d "$1" ]
+if [ "$1" = svn ]
+then
+	WHAT="$(svn st | grep '\.tex' | sed -e 's/  */ /g' |  cut -f 2 -d " ")"
+elif [ -d "$1" ]
 then
 	WHAT=$1/*.tex
 else
