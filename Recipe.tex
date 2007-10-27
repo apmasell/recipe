@@ -1,12 +1,13 @@
 \documentclass{book}
 \usepackage{fancyhdr}
 \usepackage{textcomp}
-\usepackage[pdftitle={Laboratory Procedures for Basic Applied Biochemistry},pdfauthor={Andre Masella}]{hyperref}
+\usepackage[pdftitle={Laboratory Procedures for Basic Applied Biochemistry},pdfauthor={Andre Masella},plainpages=false,pdfpagelabels]{hyperref}
 \usepackage{graphicx}
 \usepackage{ifthen}
 \usepackage{multicol}
 \usepackage{makeidx}
 \usepackage{mdwlist}
+\usepackage[chapter]{tocbibind}
 \usepackage[hscale=0.8,twoside]{geometry}
 \usepackage[sf,medium,compact]{titlesec}
 
@@ -15,24 +16,14 @@
 \input{Commands}
 
 \begin{document}
-\titlelabel{}
 \pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 
-\fancyhf{}
-\fancyhead[LE,RO]{\thepage}
-\fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
-\fancyhead[LO]{}
-
+\frontmatter
 \thispagestyle{plain}
-\widowpenalty=0
-\clubpenalty=0
 
 \title{Laboratory Procedures for Basic Applied Biochemistry \\
-\includegraphics[width=0.5\textwidth,angle=-90]{CoverLogo}
-}
-\author{ Andre Masella }
+\includegraphics[width=0.5\textwidth,angle=-90]{CoverLogo}}
+\author{Andre Masella}
 \date{\today{} -- \input{Revision.tex}}
 \maketitle
 
@@ -40,8 +31,7 @@
 
 \chapter{Introduction}
 
-\section{Welcome}
-
+\section{Welcome} 
 This book started because most of our family recipes were not written down. Those that were, often had misleading or blatantly incorrect instructions. Those that were correct, were still cryptic asking for ``enough flour to make dough the right consistency''. A particularly good example are the Breakfast Cookies\seerecipe{Cookies:BreakfastCookies} which required ``2~heaping teaspoons'' of baking powder. First, these were not standard teaspoons, but kitchen serving teaspoons. The heap is supposed to be so large that it almost cannot be removed from the container. After some precise measurements with a scale, I found that these ``teaspoons'' were 3~times larger than a standard teaspoon.
 
 I hope to slowly standardize the recipes and make the quantities sound. It is best to assume all quantities, if even present, are subject to judgement and revision. If you make a discovery about a quantity, please tell me so that I can change this book.
@@ -49,15 +39,13 @@ I hope to slowly standardize the recipes and make the quantities sound. It is be
 Some recipes are marked \UNTESTED{} meaning I have not made them, but they seem sound even though they came from the Internet. Some recipes are marked with \FIXME{}. These are undoubtedly family recipes lacking quantities, having incorrect quantities, or having missing information. If you make one of these, please accurately measure the ingredients and help me update this book.
 
 
-\section{Preparation}
-
+\section{Preparation} 
 This has been typeset using \href{http://www.ctan.org}{\LaTeX}, using custom recipe environments. The cover graphic was made in \href{http://www.inkscape.org}{Inkscape}. Revision control is done through \href{http://subversion.tigris.org/}{Subversion}.\par
 
-\section{Conversion Hints}
-
+\section{Conversion Hints} 
 It is good to know that: \par
 
-\begin{tabular}{c c c c c c c }
+\begin{tabular}{c c c c c c c}
 \tp{3} & = & \Tp{1} & = & \oz{\half} & = & \C{$\frac{1}{16}$} \\
 \C{1} & = & \oz{8} & = & \qt{\quarter} & = & \mL{250}
 \end{tabular}
@@ -83,6 +71,7 @@ Light caramel 		& 160 to \tC{170} & 320 to \tF{338} \\
 Dark caramel 		& 176 to \tC{182} & 350 to \tF{360} \\
 \hline
 \end{tabular}
+\vspace*\fill
 
 \subsection{Meat Cooking}
 \begin{tabular}{|lllc|}
@@ -109,6 +98,7 @@ Tuna, Swordfish, and Marlin &			&		& \tF{125} \\
 
 A turkey's temperature can rise \tF{30} when resting.
 
+\vspace*\fill
 
 \subsection{Barbecue Cooking}
 \begin{tabular}{|lllc|}
@@ -145,6 +135,8 @@ Zucchini--Halved 			& Medium 		&		& 6 to 10~minutes\\
 
 If fish is frozen, brush with oil and double grilling time.
 
+\vspace*\fill
+
 \section{General Tips}
 \begin{itemize}
 \item Water in a stainless steel pot should be salted after boiling as the salt will corrode and pit the metal.
@@ -171,7 +163,11 @@ If fish is frozen, brush with oil and double grilling time.
 
 \def\ThisFile{rcp:ToastingNuts}\input{ToastingNuts}
 
+\mainmatter
+
 \input{index}
+
+\backmatter
 
 \chapter{Glossary}
 \begin{description}
@@ -183,5 +179,4 @@ If fish is frozen, brush with oil and double grilling time.
 \end{description}
 
 \printindex
-
 \end{document}

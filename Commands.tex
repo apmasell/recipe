@@ -48,11 +48,11 @@
 \newcommand{\nonempty}[2]{\ifempty{#1}{}{#2}}
 
 \newenvironment{recipe}[3]{
-
 \newcommand{\theme}[1]{\index{##1!#1}##1}
 \newcommand{\htheme}[2]{\index{##2!##1!#1}##1 ##2}
 \newcommand{\shtheme}[2]{\index{##2!##1!#1}##1}
-
+\newcommand{\hint}[1]{\smallskip \noindent \textsl{##1} \par}
+\newcommand{\subrecipe}[1]{\subsection*{##1}}
 \section{#1}\label{\ThisFile}
 \nonempty{#2#3}{
 \noindent
@@ -60,7 +60,13 @@
 \hfil 
 	\nonempty{#3}{Makes #3.}
 \par}
-}{}
-
-\newcommand{\hint}[1]{\smallskip \noindent \textsl{#1} \par}
-\newcommand{\subrecipe}[1]{\subsection*{#1}}
+}{\vspace*\fill\pagebreak[2]}
+\titlelabel{}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textit{\nouppercase{\leftmark}}}
+\fancyhead[LO]{}
+\widowpenalty=0
+\clubpenalty=0
