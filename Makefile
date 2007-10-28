@@ -11,7 +11,7 @@ index.tex: ${TEXDIRS}
 	${genbigls} $^
 
 Recipe.pdf: dirs index.tex CoverLogo.pdf
-	pdflatex Recipe && makeindex Recipe && pdflatex Recipe && pdfopt Recipe.pdf OptimizedRecipe.pdf && mv OptimizedRecipe.pdf Recipe.pdf
+	pdflatex Recipe && makeindex Recipe && pdflatex Recipe
 
 Revision.tex: always
 	svn info https://masella.no-ip.org/svn/recipes | grep Revision > $@
