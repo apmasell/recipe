@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="125"
+   height="125"
+   id="svg2"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   sodipodi:docname="PotatoTortano.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   sodipodi:docbase="/home/andre">
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:cy="275"
+     inkscape:cx="335"
+     inkscape:zoom="0.92363636"
+     inkscape:window-height="715"
+     inkscape:window-width="874"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10000"
+     gridtolerance="10000"
+     objecttolerance="10000"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     width="125px"
+     height="125px"
+     inkscape:window-x="398"
+     inkscape:window-y="0"
+     inkscape:current-layer="svg2"
+     showgrid="true"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:object-nodes="true"
+     inkscape:object-points="true"
+     inkscape:object-bbox="true"
+     inkscape:grid-points="true"
+     inkscape:guide-points="true" />
+  <defs
+     id="defs427" />
+  <g
+     transform="matrix(9.9999993e-2,0,0,9.9999993e-2,-529.26466,-18.676468)"
+     id="g4760">
+    <circle
+       cx="5925"
+       cy="825"
+       r="225"
+       transform="translate(-7.3529475,-13.235266)"
+       style="fill:none;stroke:#000000;stroke-width:47.05882263;stroke-miterlimit:4;stroke-dasharray:none"
+       id="circle310"
+       sodipodi:cx="5925"
+       sodipodi:cy="825"
+       sodipodi:rx="225"
+       sodipodi:ry="225" />
+    <path
+       d="M 5917.6471,282.35294 L 5917.6471,517.64706"
+       style="fill:none;stroke:#000000;stroke-width:11.76470566;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path312" />
+    <path
+       d="M 6211.7647,811.76473 L 6447.0588,811.76473"
+       style="fill:none;stroke:#000000;stroke-width:11.76470566;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path314" />
+    <path
+       d="M 5917.6471,1105.8824 L 5917.6471,1341.1765"
+       style="fill:none;stroke:#000000;stroke-width:11.76470566;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path316" />
+    <path
+       d="M 5623.5294,811.76473 L 5388.2353,811.76473"
+       style="fill:none;stroke:#000000;stroke-width:11.76470566;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path318" />
+    <circle
+       sodipodi:ry="600"
+       sodipodi:rx="600"
+       sodipodi:cy="825"
+       sodipodi:cx="2325"
+       id="use4758"
+       style="fill:none;stroke:#000000;stroke-width:49.20000076;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       transform="matrix(0.9564801,0,0,0.9564802,3693.8308,22.668569)"
+       r="600"
+       cy="825"
+       cx="2325" />
+  </g>
+</svg>

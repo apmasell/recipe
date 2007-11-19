@@ -10,7 +10,7 @@ dirs:
 index.tex: ${TEXDIRS}
 	${genbigls} $^
 
-Recipe.pdf: dirs index.tex CoverLogo.pdf
+Recipe.pdf: dirs index.tex CoverLogo.pdf $(foreach file, $(wildcard */*.svg), $(addsuffix .pdf, $(basename $(file))))
 	pdflatex Recipe && makeindex Recipe && pdflatex Recipe
 
 Revision.tex: always
