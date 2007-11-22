@@ -1,6 +1,6 @@
 #!/bin/sh
 
-./filteringredients */*.tex > ingredientlist
+./filteringredients "$@" > ingredientlist
 for each in $(./indexedingredients | tr " " + )
 do
 	echo Checking $each...
