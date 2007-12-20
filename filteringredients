@@ -1,2 +1,4 @@
 #!/bin/sh
-exec awk 'BEGIN {flag=0} $0 == "\\end{ingredients}" { flag = 0 } flag == 1 {print FILENAME":"$0} $0 == "\\begin{ingredients}" {flag=1}' "$@"
+
+. processargs
+exec awk 'BEGIN {flag=0} $0 == "\\end{ingredients}" { flag = 0 } flag == 1 {print FILENAME":"$0} $0 == "\\begin{ingredients}" {flag=1}' $WHAT

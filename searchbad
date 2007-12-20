@@ -1,20 +1,8 @@
-#!/bin/sh
+#!/bin/sh -
 
-if [ "$1" = svn ]
-then
-	WHAT="$(svn st | grep '\.tex' | sed -e 's/  */ /g' |  cut -f 2 -d " ")"
-elif [ -d "$1" ]
-then
-	WHAT=$1/*.tex
-else
-	WHAT=*/*.tex
-fi
+. processargs
 
-for each in $WHAT
+for expr in '([0-9]|\\(|two|three)(third|quarter|eighth)) (minute|hour|second|day|week)' '[0-9](| |\\,|~)(cm|oz|lbs)' '[0-9]+ \\(|two|three)(third|quarter|eighth)' '\\(|two|three)(third|quarter|eighth) +[^\\]' '\\textdegree' 'cup' '[Tt]b?sp' '(tea|table)spoon' '[pP]re-heat' '[lL]iquor' 'icing sugar' 'long grained' lengthwise 'length wise' 'semisweet' 'vanilla extract' 'about' 'butter milk' 'un.?greased' '[aA]pprox[^i]' '[Bb]ake at' 'powdered sugar' 'broth' 'all[^-]?purpose' 'whole[^ ]?wheat' 'white sugar' 'upside[^-]?down' '(tea|paper)[^ ]towel' ' $'
 do
-	for expr in '([0-9]|\\(|two|three)(third|quarter|eighth)) (minute|hour|second|day|week)' '[0-9](| |\\,|~)(cm|oz|lbs)' '[0-9]+ \\(|two|three)(third|quarter|eighth)' '\\(|two|three)(third|quarter|eighth) +[^\\]' '\\textdegree' 'cup' '[Tt]b?sp' '(tea|table)spoon' '[pP]re-heat' '[lL]iquor' 'icing sugar' 'long grained' lengthwise 'length wise' 'semisweet' 'vanilla extract' 'about' 'butter milk' 'un.?greased' '[aA]pprox[^i]' '[Bb]ake at' 'powdered sugar' 'broth' 'all[^-]?purpose' 'whole[^ ]?wheat' 'white sugar' 'upside[^-]?down' '(tea|paper)[^ ]towel' ' $'
-	do
-		lines="`egrep -n "$expr" $each | cut -f 1 -d : | tr '\n' ' '`"
-		[ ! -z "$lines" ] && echo $each fails $expr on $lines
-	done
+	egrep -Hon "$expr" $WHAT
 done

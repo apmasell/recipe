@@ -1,8 +1,9 @@
 #!/bin/sh
 
-if [ -d "$1" ]
-then
-	for each in $1/*.tex; do [ $(basename $each) == index.tex ] || aspell -c $each; done
-else
-	for each in $(svn st | grep '\.tex' | sed -e 's/  */ /g' |  cut -f 2 -d " "); do aspell -c $each; done
-fi
+. processargs
+
+for each in $WHAT
+do
+	aspell -c $each
+done
+

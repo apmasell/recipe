@@ -1,0 +1,25 @@
+WHAT=""
+while [ $# -gt 0 ]
+do
+	if [ "$1" = svn ]
+	then
+		WHAT="$WHAT $(svn st | grep '\.tex' | sed -e 's/  */ /g' |  cut -f 2 -d " ")"
+	elif [ -d "$1" ]
+	then
+		for each in $1/*.tex
+		do
+			[ $(basename $each) == index.tex ] || WHAT="$WHAT $each"
+		done
+	elif [ -f "$1" ]
+	then
+		WHAT="$WHAT $1"
+	fi
+	shift
+done
+
+if [ "x$WHAT" = "x" ]
+then
+		WHAT=*/*.tex
+fi
+
+export WHAT
