@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ls */*.tex | egrep -v '/index.tex$' | wc -l
