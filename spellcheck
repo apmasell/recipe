@@ -4,6 +4,6 @@
 
 for each in $WHAT
 do
-	aspell -c $each
+	aspell --mode=tex -p ./dictionary --add-tex-command "seerecipe p" --add-tex-command "slashitem p" -c $each
 done
 

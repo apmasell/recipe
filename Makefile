@@ -21,11 +21,11 @@ Revision.tex: always
 	inkscape -A $@ $<
 
 rmtemp:
-	rm -f Recipe.log Recipe.dvi Recipe.ps missfont.log Recipe.out
+	rm -f Recipe.dvi Recipe.ps missfont.log Recipe.out
 
 clean: rmtemp
 	for dir in ${TEXDIRS}; do $(MAKE) -C $$dir clean; done
-	rm -f Recipe.aux Recipe.idx Recipe.ilg Recipe.ind Recipe.pdf index.tex Revision.tex
+	rm -f Recipe.aux Recipe.idx Recipe.ilg Recipe.ind Recipe.pdf index.tex Revision.tex Recipe.log
 
 .PHONY: all clean rmtemp dirs always
 

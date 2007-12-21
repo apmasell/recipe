@@ -19,7 +19,10 @@ done
 
 if [ "x$WHAT" = "x" ]
 then
-		WHAT=*/*.tex
+		for each in */*.tex
+		do
+			[ $(basename $each) == index.tex ] || WHAT="$WHAT $each"
+		done
 fi
 
 export WHAT
