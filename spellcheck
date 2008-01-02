@@ -4,6 +4,10 @@
 
 for each in $WHAT
 do
-	aspell --mode=tex -p ./dictionary --add-tex-command "seerecipe p" --add-tex-command "slashitem p" --add-tex-command "up p" -c $each
+	aspell --mode=tex -p ./dictionary --add-tex-command "importrcp pp" --add-tex-command "seerecipe p" --add-tex-command "slashitem p" --add-tex-command "up p" --add-tex-command "pronounce p" -c $each
 done
 
+mv dictionary dictemp
+head -n 1 dictemp > dictionary
+tail -n +2 dictemp | sort >> dictionary
+rm -f dictemp

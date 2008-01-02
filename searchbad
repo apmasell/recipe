@@ -2,7 +2,4 @@
 
 . processargs
 
-for expr in '([0-9]|\\(|two|three)(third|quarter|eighth)) (minute|hour|second|day|week)' '[0-9](| |\\,|~)(cm|oz|lbs)' '[0-9]+ \\(|two|three)(third|quarter|eighth)' '\\(|two|three)(third|quarter|eighth) +[^\\]' '\\textdegree' 'cup' '[Tt]b?sp' '(tea|table)spoon' '[pP]re-heat' '[lL]iquor' 'icing sugar' 'long grained' lengthwise 'length wise' 'semisweet' 'vanilla extract' 'about' 'butter milk' 'un.?greased' '[aA]pprox[^i]' '[Bb]ake at' 'powdered sugar' 'broth' 'all[^-]?purpose' 'whole[^ ]?wheat' 'white sugar' 'upside[^-]?down' '(tea|paper)[^ ]towel' ' $'
-do
-	egrep -Hon "$expr" $WHAT
-done
+egrep -Hon '([0-9]|\\(|two|three)(third|quarter|eighth)) (minute|hour|second|day|week)|[0-9](| |\\,|~)(cm|oz|lbs)|[0-9]+ \\(|two|three)(third|quarter|eighth)|\\(|two|three)(third|quarter|eighth) +[^\\]|\\textdegree|cup|[Tt]b?sp|(tea|table)spoon|[pP]re-heat|[lL]iquor|icing sugar|long grained|lengthwise|length wise|semisweet|vanilla extract|about|butter milk|un.?greased|[aA]pprox[^i]|[Bb]ake at|powdered sugar|broth|all[^-]?purpose|whole[^ ]?wheat|white sugar|upside[^-]?down|(tea|paper)[^ ]towel| $|\\(Tp|tp|C|oz|cm|inch|lbs|qt|gr|kgr|gal|ltr|mL|tF|tC|ang){[^ }]* [^}]*}' $WHAT

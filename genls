@@ -11,6 +11,6 @@ fi
 echo '\begin{multicols}{2}\raggedcolumns' >> index.tex
 for FILE in $(ls *.tex | egrep -v 'index.tex' | sed -e 's/\.tex$//' | sort | sed -e 's/$/.tex/')
 do
-	echo '\def\ThisFile{'rcp:$DIR:$(basename $FILE .tex)'}\input{'$DIR/$FILE'}' >> index.tex
+	echo '\importrcp{'rcp:$DIR:$(basename $FILE .tex)'}{'$DIR/$FILE'}' >> index.tex
 done
 echo '\end{multicols}' >> index.tex
