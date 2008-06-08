@@ -1,16 +1,10 @@
 #!/bin/sh
 
-./filteringredients "$@" > ingredientlist
-for each in $(./indexedingredients | tr " " + )
+for each in $(./indexedingredients | sed -e 's/ /+/g;s/^\(.*\)!\(.*\)/\2#\1/g'
+)
 do
-	echo Checking $each...
-	FILES="$(grep -w "$(echo $each | tr + " ")" ingredientlist | grep -v theme | cut -f 1 -d : | sort | uniq)"
-	if [ "x$FILES" != "x" ]
-	then
-		echo Need to edit $FILES
-		read SKIP
-		[ "x$SKIP" = x ] && vim $FILES
-	fi
+	theme="\\<$(echo $each | sed -e 's/+/ /g;s/#/( |}{)/g')\\>"
+	echo "#$each"
+	./filteringredients "$@" | tr '~' '_' | awk -F: '$1 != curfile {curfile = $1; process = 1} process {} $2 ~ /'"$theme"'/ && $2 ~ /theme/ { process = 0; } process && $2 ~ /'"$theme"'/ { print $0; process = 0}'
 done
 
-rm -f ingredientlist
