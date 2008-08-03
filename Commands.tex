@@ -23,9 +23,10 @@
 \newcommand{\ang}[1]{#1\,\textdegree}
 \newcommand{\UNTESTED}{\textbullet{}}
 \newcommand{\FIXME}{\textdaggerdbl{}}
-\newcommand{\seerecipe}[1]{~(See page~\pageref{rcp:#1})\ }
+\newcommand{\seerecipe}[1]{\nameref{rcp:#1}~(See page~\pageref{rcp:#1})\ }
 \newcommand{\up}[1]{{\thinspace$^{\hbox{\scriptsize#1\fam=-1}}$}}
-\newcommand{\pronounce}[1]{\textsl{(#1)}}
+\newcommand{\pronounce}[1]{(\textsl{#1})}
+\newcommand{\method}[1]{This recipe is made using \nameref{method:#1}.\par}
 
 \newenvironment{ingredients}
 {\noindent Ingredients:\begin{itemize*}\setlength{\itemindent}{-1.2pc}\renewcommand{\labelitemi}{$\cdot$}}{\end{itemize*}}
