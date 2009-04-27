@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 FILE=`mktemp -t addrecipe-XXXXXX`
 DIALOG=`mktemp -t addrecipe-XXXXXX`

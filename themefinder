@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 for each in $(./indexedingredients | sed -e 's/ /+/g;s/^\(.*\)!\(.*\)/\2#\1/g'
 )

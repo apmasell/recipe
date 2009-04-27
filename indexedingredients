@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/bin/bash
 cat Recipe.idx | cut -f 2 -d { | rev | cut -f 2- -d ! | rev | sort | uniq
