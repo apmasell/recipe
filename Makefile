@@ -10,8 +10,11 @@ dirs:
 index.tex: ${TEXDIRS}
 	${genbigls} $^
 
-Recipe.pdf: dirs index.tex CoverLogo.pdf $(foreach file, $(wildcard */*.svg), $(addsuffix .pdf, $(basename $(file))))
+Recipe.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(wildcard */*.svg), $(addsuffix .pdf, $(basename $(file))))
 	pdflatex Recipe && makeindex Recipe && pdflatex Recipe
+
+RecipeEbook.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(wildcard */*.svg), $(addsuffix .pdf, $(basename $(file))))
+	pdflatex RecipeEbook && makeindex RecipeEbook && pdflatex RecipeEbook
 
 Revision.tex: always
 	svn info https://masella.no-ip.org/svn/recipes | grep Revision > $@
