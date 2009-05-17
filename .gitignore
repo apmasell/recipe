@@ -1,0 +1,10 @@
+*.aux
+*.idx
+*.ilg
+*.ind
+index.tex
+*.log
+*.out
+*.pdf
+Revision.tex
+*.toc

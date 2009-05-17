@@ -17,8 +17,8 @@ RecipeEbook.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(w
 	pdflatex RecipeEbook && makeindex RecipeEbook && pdflatex RecipeEbook
 
 Revision.tex: always
-	svn info https://masella.no-ip.org/svn/recipes | grep Revision > $@
-	[ `svn st | wc -l` -gt 0 ] && echo Dirty || exit 0 >> $@
+	git log HEAD^..HEAD --pretty=format:%H > $@
+	git status > /dev/null || echo Dirty >> $@
 
 %.pdf: %.svg
 	inkscape -A $@ $<
