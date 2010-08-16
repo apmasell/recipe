@@ -44,7 +44,7 @@ sed -e 's/name/'"$TITLE"'/g;s/author/'"$AUTHOR"'/g;s/servings/'"$SIZE"'/g' Templ
 rm -f $FILE $DIALOG
 
 [ "x$EDITOR" == x ] && EDITOR=vi
-svn add $FILENAME
 
 exec $EDITOR $FILENAME
+git add $FILENAME
 
