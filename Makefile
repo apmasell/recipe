@@ -19,6 +19,7 @@ RecipeEbook.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(w
 Revision.tex: always
 	git log HEAD^..HEAD --pretty=format:%H > $@
 	git status > /dev/null || echo Dirty >> $@
+	git rev-parse HEAD | qrencode -i -o Revision.png
 
 %.pdf: %.svg
 	inkscape -A $@ $<
