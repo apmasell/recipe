@@ -29,7 +29,7 @@ rmtemp:
 
 clean: rmtemp
 	for dir in ${TEXDIRS}; do $(MAKE) -C $$dir clean; done
-	rm -f Recipe.aux Recipe.idx Recipe.ilg Recipe.ind Recipe.pdf index.tex Revision.tex Recipe.log
+	rm -f Recipe.aux Recipe.idx Recipe.ilg Recipe.ind index.tex Revision.tex Recipe.log
 
 .PHONY: all clean rmtemp dirs always
 
