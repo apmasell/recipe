@@ -1,4 +1,4 @@
-TEXFILES=$(wildcard *.tex)
+TEXFILES=$(filter-out index.tex, $(wildcard *.tex))
 
 index.tex: ${TEXFILES}
 	${genls}

@@ -11,7 +11,7 @@ index.tex: ${TEXDIRS}
 	${genbigls} $^
 
 Recipe.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(wildcard */*.svg), $(addsuffix .pdf, $(basename $(file))))
-	pdflatex Recipe && makeindex Recipe && pdflatex Recipe
+	pdflatex -interaction=batchmode Recipe && makeindex -q Recipe && pdflatex -interaction=batchmode Recipe
 
 RecipeEbook.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(wildcard */*.svg), $(addsuffix .pdf, $(basename $(file))))
 	pdflatex RecipeEbook && makeindex RecipeEbook && pdflatex RecipeEbook
