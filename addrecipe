@@ -45,6 +45,5 @@ rm -f $FILE $DIALOG
 
 [ "x$EDITOR" == x ] && EDITOR=vi
 
-exec $EDITOR $FILENAME
-git add $FILENAME
+$EDITOR $FILENAME && git add $FILENAME
 
