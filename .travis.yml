@@ -3,7 +3,7 @@ dist: trusty
 language: c
 before_script:
 - sudo apt-get update -qq
-- sudo apt-get install -qq -y --force-yes inkscape make qrencode texlive-base
+- sudo apt-get install -qq -y --force-yes inkscape make qrencode texlive-latex-base
 script: "make && mkdir -p www && cp Recipe*.pdf www"
 notifications:
   on_success: never
