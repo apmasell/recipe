@@ -1,0 +1,19 @@
+sudo: required
+dist: trusty
+language: c
+before_script:
+- sudo apt-get update -qq
+- sudo apt-get install -qq -y --force-yes inkscape make qrencode texlive-base
+script: "make && mkdir -p www && cp Recipe*.pdf www"
+notifications:
+  on_success: never
+  on_failure: change
+deploy:
+  provider: s3
+  access_key_id: AKIAJY7JELRUQJ6ESEWA
+  secret_access_key:
+    secure: XEIvbH7J10Dq8ZyvOJa6t/WyZ9WShIbbG6jvt9Ak6006pSe9WYKNY3cSDl2omO83LWyr2VS5j3IMA1TI2qRAy130V1NyxL7hlztjjgY6EPtfAstPosgQPkStVWcox+v82KytXMZ87/bWv4sm3cxxLRPHKaAcwZazrgubsKQJaQw=
+  bucket: www.masella.name
+  skip_cleanup: true
+  local_dir: www
+  acl: public_read
