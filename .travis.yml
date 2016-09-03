@@ -13,7 +13,7 @@ deploy:
   access_key_id: AKIAJY7JELRUQJ6ESEWA
   secret_access_key:
     secure: XEIvbH7J10Dq8ZyvOJa6t/WyZ9WShIbbG6jvt9Ak6006pSe9WYKNY3cSDl2omO83LWyr2VS5j3IMA1TI2qRAy130V1NyxL7hlztjjgY6EPtfAstPosgQPkStVWcox+v82KytXMZ87/bWv4sm3cxxLRPHKaAcwZazrgubsKQJaQw=
-  bucket: www.masella.name
+  bucket: artefacts.masella.name
   skip_cleanup: true
   local_dir: www
   acl: public_read
