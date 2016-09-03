@@ -1,6 +1,7 @@
 TEXDIRS=$(filter-out CVS/,$(wildcard */))
 genls=`pwd`/genls
 genbigls=`pwd`/genbigls
+MODE ?= nonstopmode
 
 all:	Revision.tex Recipe.pdf rmtemp
 
@@ -11,10 +12,10 @@ index.tex: ${TEXDIRS}
 	${genbigls} $^
 
 Recipe.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(wildcard */*.svg), $(addsuffix .pdf, $(basename $(file))))
-	pdflatex -interaction=batchmode Recipe && makeindex -q Recipe && pdflatex -interaction=batchmode Recipe
+	pdflatex -interaction=$(MODE) Recipe && makeindex -q Recipe && pdflatex -interaction=$(MODE) Recipe
 
 RecipeEbook.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(wildcard */*.svg), $(addsuffix .pdf, $(basename $(file))))
-	pdflatex RecipeEbook && makeindex RecipeEbook && pdflatex RecipeEbook
+	pdflatex -interaction=$(MODE) RecipeEbook && makeindex -q RecipeEbook && pdflatex -interaction=$(MODE) RecipeEbook
 
 Revision.tex: always
 	git log HEAD^..HEAD --pretty=format:%H > $@
