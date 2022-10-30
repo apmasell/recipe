@@ -18,7 +18,7 @@ RecipeEbook.pdf: dirs index.tex RecipeMain.tex CoverLogo.pdf $(foreach file, $(w
 	pdflatex -interaction=$(MODE) RecipeEbook && makeindex -q RecipeEbook && pdflatex -interaction=$(MODE) RecipeEbook
 
 Revision.tex: always
-	git log HEAD^..HEAD --pretty=format:%H > $@
+	git rev-parse HEAD > $@
 	git status > /dev/null || echo Dirty >> $@
 	git rev-parse HEAD | qrencode -i -o Revision.png
 

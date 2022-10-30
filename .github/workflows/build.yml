@@ -1,0 +1,27 @@
+name: Prepare PDF
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    steps:
+        - uses: actions/checkout@v3
+
+        - name: Install Dependencies
+          run: "sudo apt-get install -y --force-yes inkscape make qrencode texlive-latex-base texlive-latex-recommended texlive-latex-extra"
+
+        - name: Build
+          run: "make all RecipeEbook.pdf"
+
+        - name: Deploy
+          uses: reggionick/s3-deploy@v3
+          with:
+            folder: .
+            bucket: ${{ secrets.S3_BUCKET }}
+            bucket-region: ${{ secrets.S3_BUCKET_REGION }}
+            delete-removed: false
+            no-cache: true
+            private: false
+            filesToInclude: "*.pdf"
