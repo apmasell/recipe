@@ -23,7 +23,7 @@ Revision.tex: always
 	git rev-parse HEAD | qrencode -i -o Revision.png
 
 %.pdf: %.svg
-	inkscape -A $@ $<
+	inkscape --export-filename=$@ $<
 
 rmtemp:
 	rm -f Recipe.dvi Recipe.ps missfont.log Recipe.out
